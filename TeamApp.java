@@ -1,3 +1,7 @@
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
 public class TeamApp {
     public static void main(String[] args) {
         System.out.println("Our team application");
@@ -17,5 +21,17 @@ public class TeamApp {
 
     public static void printGoodbye() {
         System.out.println("Thanks for using our application!");
+    }
+
+    public static void saveTestPerson() {
+        try {
+            FileOutputStream stream = new FileOutputStream("TestPerson.dat");
+            ObjectOutputStream objectFile = new ObjectOutputStream(stream);
+            Person p = new Person("Alvin", 20);
+            objectFile.writeObject(p);
+            objectFile.close();
+        } catch (IOException e) {
+            System.out.println("Something went wrong during serialization");
+        }
     }
 }
