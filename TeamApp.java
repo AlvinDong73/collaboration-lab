@@ -1,5 +1,8 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 public class TeamApp {
@@ -31,7 +34,24 @@ public class TeamApp {
             objectFile.writeObject(p);
             objectFile.close();
         } catch (IOException e) {
-            System.out.println("Something went wrong during serialization");
+            System.out.println("Something went wrong during serialization:");
+            System.out.println(e);
         }
+    }
+
+    public static Person loadTestPerson() {
+        try {
+            FileInputStream stream = new FileInputStream("TestPerson.dat");
+            ObjectInputStream objectInput = new ObjectInputStream(stream);
+            Person p = (Person) objectInput.readObject();
+            objectInput.close();
+            return p;
+        } catch (FileNotFoundException e) {
+            System.out.println("TestPerson.dat does not exist.");
+        } catch (Exception e) {
+            System.out.println("Something went wrong during deserialization:");
+            System.out.println(e);
+        }
+        return null;
     }
 }
