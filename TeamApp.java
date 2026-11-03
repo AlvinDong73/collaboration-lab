@@ -5,11 +5,13 @@ public class TeamApp {
         System.out.println("Feature added by Dan");
         System.out.println("Some other feature");
         System.out.println("Christian's new line of code");
+
         printTeamInfo();
     }
 
-    public static void printTeamInfo() {
-        System.out.println("Created by the CS 67 team");
+    public static void printTeamInfo()
+    {
+        System.out.println("Created by the CS 067 team (second branch)");
         printGoodbye();
     }
 
