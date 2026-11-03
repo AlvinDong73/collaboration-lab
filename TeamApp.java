@@ -5,6 +5,7 @@ public class TeamApp {
         System.out.println("Feature added by Dan");
         System.out.println("Some other feature");
         System.out.println("Christian's new line of code");
+        printGoodbye();
     }
 
     public static void printGoodbye() {
