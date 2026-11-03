@@ -11,6 +11,6 @@ public class TeamApp {
 
     public static void printTeamInfo()
     {
-        System.out.println("Created by the CS 067 team");
+        System.out.println("Created by the CS 067 team (second branch)");
     }
 }
